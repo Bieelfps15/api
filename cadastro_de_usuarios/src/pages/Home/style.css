@@ -1,0 +1,79 @@
+.container{
+  display: flex;
+  align-items: center;
+  padding-top: 100px;
+  flex-direction: column;
+  padding: 100px;
+}
+
+h1{
+  color: white;
+  font-size: 32px;
+  text-align: center;
+}
+
+form{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: rgb(109, 109, 109);
+  max-width: 50%;
+  width: 400px;
+  margin-bottom: 20px;
+
+  & button{
+    border-radius: 30px;
+    background-color: rgb(34, 156, 95);
+    height: 40px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    color: white;
+  }
+  
+  & button:hover{
+    opacity: 0.8;
+  }
+  
+  & input{
+    border: 1px solid red;
+    border-radius: 30px;
+    background-color: rgb(255, 255, 255);
+    height: 40px;
+    color: rgb(0, 0, 0);
+    font-size: 16px;
+    padding-left: 10px;
+    outline: auto;
+  
+  }
+}
+
+.card {
+  display: flex;
+  justify-content: space-between;
+  background-color: rgb(109, 109, 109);
+  margin: 10px;
+  padding: 10px;
+  width: 400px;
+  border-radius: 10px;
+
+  & p{
+    color: white;
+    font-weight: bold;
+    
+  }
+
+  & button{
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+  }
+  
+  & button:hover{
+    opacity: 0.8;
+  }
+
+}
+
