@@ -8,11 +8,11 @@ app.use(express.json())
 
 app.post('/usuarios', async (req, res) => {
 
-    await prisma.user.create({
+    await prisma.usuario.create({
         data: {
             email: req.body.email,
-            name: req.body.name,
-            agg: req.body.age
+            nome: req.body.nome,
+            idade: req.body.idade
         }
     })
 
@@ -21,14 +21,14 @@ app.post('/usuarios', async (req, res) => {
 
 app.put('/usuarios/:id', async (req, res) => {
 
-    await prisma.user.update({
+    await prisma.usuario.update({
         where: {
             id: req.params.id
         },
         data: {
             email: req.body.email,
-            name: req.body.name,
-            agg: req.body.age
+            nome: req.body.nome,
+            idade: req.body.idade
         }
     })
 
@@ -40,15 +40,15 @@ app.get('/usuarios', async (req, res) => {
     let usuarios = []
 
     if (req.query) {
-        usuarios = await prisma.user.findMany({
+        usuarios = await prisma.usuario.findMany({
             where: {
-                name: req.query.name,
                 email: req.query.email,
-                agg: req.body.age
+                nome: req.query.nome,
+                idade: req.body.idade
             }
         })
     } else {
-        usuarios = await prisma.user.findMany()
+        usuarios = await prisma.usuario.findMany()
 
     }
 
@@ -57,7 +57,7 @@ app.get('/usuarios', async (req, res) => {
 })
 
 app.delete('/usuarios/:id', async (req, res) => {
-    await prisma.user.delete({
+    await prisma.usuario.delete({
         where: {
             id: req.params.id
         }
